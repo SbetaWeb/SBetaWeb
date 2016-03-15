@@ -1,0 +1,30 @@
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'FalconMasters';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-mail:before {
+	content: "\e604";
+}
+.icon-house:before {
+	content: "\e622";
+}
+.icon-tag:before {
+	content: "\e62d";
+}
+.icon-suitcase:before {
+	content: "\e652";
+}
+.icon-text:before {
+	content: "\e697";
+}
