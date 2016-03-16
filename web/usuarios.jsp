@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="Estilos/jsp.css"  type="text/css" />
         <link rel="stylesheet" href="Estilos/estilos_2.css"  type="text/css" />
         <script src="JavaScript/nobackbutton.js"></script> 
+        <script src="JavaScript/soloNumeros.js"></script> 
 
     </head>
 
@@ -120,7 +121,9 @@
                 mensaje = "Debes Ingresar una Contraseña";
             }else if (repetirclave == "") {
                 mensaje = "Vuelve a Ingresar la Contraseña";
-            }else if (usuario == clave) {
+            }else if (!clave.equals(repetirclave)){
+                mensaje = "Ambas contraseñas deben ser iguales";
+            }else if (usuario.equals(clave)) {
                 mensaje = "¡La Contraseña no puede ser igual al Usuario!";
             
             }else {
@@ -161,10 +164,10 @@
                 mensaje = "Debes Ingresar una Contraseña";
             }else if (repetirclave == "") {
                 mensaje = "Vuelve a Ingresar la Contraseña";
-            
-            }else if (clave != repetirclave) {
-                mensaje = "Ambas Contraseñas deben ser Iguales";
-            
+            }else if (!clave.equals(repetirclave)){
+                mensaje = "Ambas contraseñas deben ser iguales";
+            }else if (usuario.equals(clave)) {
+                mensaje = "¡La Contraseña no puede ser igual al Usuario!";
             }else {
                 Datos misDatos = new Datos();
                 Usuario miUsuario = misDatos.getUsuario(usuario);
@@ -298,7 +301,7 @@
 
                     <ul>
 
-                        <li><a href='#'><span class="primero"><center><img id="icono" src="Imagenes/0032-book.png"/></center></span>Gestión</a>
+                        <li><a href='#'><span class="primero"><center><img id="icono" src="Imagenes/0032-book.png"/></center></span>Productos</a>
                             <ul>
                                 <li><a href='#'>Películas</a></li>
                                 <li><a href='#'>Videojuegos</a></li>
@@ -360,7 +363,7 @@
 
                         
                             <td>*Cédula:</td>
-                            <td> <input type="text" name="cedula" id="cedula" value="<%=cedula%>" title="Dijita tu Cédula, mínimo 8 caracteres" pattern="(?=.*[0-9]).{8,}" maxlength="20"  placeholder=" Dijita tu Cédula" /></td>
+                            <td> <input type="text" name="cedula" id="cedula" value="<%=cedula%>" title="Dijita tu Cédula, mínimo 8 caracteres" pattern="(?=.*[0-9]).{8,}" maxlength="20"  placeholder=" Dijita tu Cédula" onkeypress="return soloNumeros(event);"/></td>
                         </tr>
 
                         <tr>
@@ -376,7 +379,7 @@
                             <td> <input type="text" name="celular" id="celular" value="<%=celular%>" title="Dijita tu Celular, mínimo 10 caracteres" pattern="(?=.*[0-9]).{10,}" maxlength="20"  placeholder=" Dijita tu Celular" /></td>
                         
                             <td>*Correo Electrónico:</td>
-                            <td> <input type="text" name="email" id="email" value="<%=email%>" title="Dijita tu Dirección de Correo Electrónico" pattern="(?=.*[a-z]).{10,}" maxlength="60"  placeholder=" Dijita tu Dirección de Correo Electrónico" /></td>
+                            <td> <input type="text" name="email" id="email" pattern="^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$" value="<%=email%>" title="mail@example.com" maxlength="60"  placeholder=" Dijita tu Dirección de Correo Electrónico" /></td>
                         </tr>
 
                         <tr>
@@ -429,6 +432,7 @@
                 </table>
             </center>
         </form>
+        <br>
     <center><h1><%=mensaje%></h1></center>
     </body>
 </html>
