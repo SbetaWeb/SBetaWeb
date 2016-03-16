@@ -110,7 +110,7 @@ thead{
 }
 td{
     
-    font-family: arial;
+    font-family: helvetica;
 }
 
 p{
@@ -136,10 +136,7 @@ h3{
 
 
 body{  
-  background-image: url(../Imagenes/eclipse.jpg); 
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed; 
+  background-color: #09091a; 
   overflow-x: hidden;
   -webkit-animation: animacion 50s infinite alternate; //la solucion ara que no se vea recargando es poner varias 
   

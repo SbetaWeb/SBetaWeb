@@ -1,6 +1,7 @@
 
 body {
-    background-image: url(../Imagenes/eclipse.jpg);
+   
+    background-color: #09091a;
     background-size: cover; 
     height: 100%;
     width: 100%;
@@ -35,7 +36,7 @@ table {
     width: 395px; 
     height: 40px;
     text-align: center;
-    background-color: #E93648;
+    background-color: #4cc8de;
     color: white;
     font-family: helvetica;
     font-size: 15px;
@@ -72,16 +73,21 @@ td{
 
 @font-face {
     font-family: myFont;
-    src: url(../Fuentes/bimasakti.ttf);
+    src: url(../Fuentes/Arcapulse.otf);
 }
 
 #titulo{
     
     font-family: myFont;
-    font-size: 40px;
+    font-size: 50px;
     text-align: center;
+    color: white;
 }
 
+hr{
+    
+  padding-left: 430px;  
+}
 input{
     
      padding: 7px ;

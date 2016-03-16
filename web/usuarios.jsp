@@ -355,12 +355,12 @@
                     <tbody>
                         <tr>
                             <td>*Nombre de Usuario:</td>
-                            <td> <input type="text" name="usuario" id="usuario" value="<%=usuario%>" title="Usuario,almenos 8 caracteres, minúsculas y mayúsculas " pattern="(?=.*[a-z])(?=.*[A-Z]).{8,}" maxlength="20"  placeholder="Dijita tu Usuario" /></td>
+                            <td> <input type="text" name="usuario" id="usuario" value="<%=usuario%>" title="Usuario,almenos 8 caracteres, minúsculas y mayúsculas " pattern="(?=.*[a-z])(?=.*[A-Z]).{8,}" maxlength="20"  placeholder=" Dijita tu Usuario" /></td>
                         
 
                         
                             <td>*Cédula:</td>
-                            <td> <input type="text" name="cedula" id="cedula" value="<%=cedula%>" title="Dijita tu Cédula, mínimo 8 caracteres" pattern="(?=.*[0-9]).{8,}" maxlength="20"  placeholder="Dijita tu Cédula" /></td>
+                            <td> <input type="text" name="cedula" id="cedula" value="<%=cedula%>" title="Dijita tu Cédula, mínimo 8 caracteres" pattern="(?=.*[0-9]).{8,}" maxlength="20"  placeholder=" Dijita tu Cédula" /></td>
                         </tr>
 
                         <tr>
@@ -368,15 +368,15 @@
                             <td> <input type="text" name="nombre" id="nombre" value="<%=nombre%>" title="Dijita tu nombre"  maxlength="40"  placeholder="Dijita tu nombre" /></td>
                         
                             <td>*Apellido:</td>
-                            <td> <input type="text" name="apellido" id="apellido" value="<%=apellido%>" title="Dijita tu apellido"  maxlength="40"  placeholder="Dijita tu apellido" /></td>
+                            <td> <input type="text" name="apellido" id="apellido" value="<%=apellido%>" title="Dijita tu apellido"  maxlength="40"  placeholder=" Dijita tu apellido" /></td>
                         </tr>
 
                         <tr>
                             <td>*Celular:</td>
-                            <td> <input type="text" name="celular" id="celular" value="<%=celular%>" title="Dijita tu Celular, mínimo 10 caracteres" pattern="(?=.*[0-9]).{10,}" maxlength="20"  placeholder="Dijita tu Celular" /></td>
+                            <td> <input type="text" name="celular" id="celular" value="<%=celular%>" title="Dijita tu Celular, mínimo 10 caracteres" pattern="(?=.*[0-9]).{10,}" maxlength="20"  placeholder=" Dijita tu Celular" /></td>
                         
                             <td>*Correo Electrónico:</td>
-                            <td> <input type="text" name="email" id="email" value="<%=email%>" title="Dijita tu Dirección de Correo Electrónico" pattern="(?=.*[a-z]).{10,}" maxlength="60"  placeholder="Dijita tu Dirección de Correo Electrónico" /></td>
+                            <td> <input type="text" name="email" id="email" value="<%=email%>" title="Dijita tu Dirección de Correo Electrónico" pattern="(?=.*[a-z]).{10,}" maxlength="60"  placeholder=" Dijita tu Dirección de Correo Electrónico" /></td>
                         </tr>
 
                         <tr>
@@ -395,27 +395,31 @@
 
                         <tr>
                             <td>*Contraseña:</td>
-                            <td> <input type="password" name="clave" id="clave" value="<%=clave%>" title="Clave, almenos 8 Caracteres, Minúsculas, Mayúsculas y Números" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}" maxlength="40"  placeholder="Dijita tu Clave" onkeyup="muestra_seguridad_clave(this.value, this.form)"/></td>
+                            <td> <input type="password" name="clave" id="clave" value="<%=clave%>" title="Clave, almenos 8 Caracteres, Minúsculas, Mayúsculas y Números" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}" maxlength="40"  placeholder=" Dijita tu Clave" onkeyup="muestra_seguridad_clave(this.value, this.form)"/></td>
                         
                             <td>*Repetir Contraseña:</td>
-                            <td> <input type="password" name="repetirclave" id="repetirclave" value="<%=repetirclave%>" title="Clave, Vuelve a Digitar tu Clave" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}" maxlength="40"  placeholder="Vuelve a Digitar tu Clave" /></td>
+                            <td> <input type="password" name="repetirclave" id="repetirclave" value="<%=repetirclave%>" title="Clave, Vuelve a Digitar tu Clave" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}" maxlength="40"  placeholder=" Vuelve a Digitar tu Clave" /></td>
                         </tr>
                         
                         <tr>
                             <td>Seguridad Contraseña:</td> 
-                            <td><input type="text" name="seguridad" style="border: 0px;  background-color:transparent; "onfocus="blur()"></td>
+                            <td><input type="text"  name="seguridad" style="border: 0px;  background-color:transparent; "onfocus="blur()"></td>
+                            <td></td>
+                            <td></td>
+                            
                         </tr>
+                        
 
                         <tr>
 
                     <td colspan="4">
                         <center>
-                            <input type="submit" name="insertar" value="Insertar">
-                            <input type="submit" name="consultar" value="Consultar">
-                            <input type="submit" name="modificar" value="Modificar">
-                            <input type="submit" name="eliminar" value="Eliminar">
-                            <input type="submit" name="limpiar" value="Limpiar">
-                            <input type="submit" name="listar" value="Listar">
+                            <input id="boton" type="submit" name="insertar" value="Insertar">
+                            <input id="boton" type="submit" name="consultar" value="Consultar">
+                            <input id="boton" type="submit" name="modificar" value="Modificar">
+                            <input id="boton" type="submit" name="eliminar" value="Eliminar">
+                            <input id="boton" type="submit" name="limpiar" value="Limpiar">
+                            <input id="boton" type="submit" name="listar" value="Listar">
                         </center>
                     </td>   
 

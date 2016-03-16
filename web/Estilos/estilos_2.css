@@ -97,6 +97,7 @@ table{
     
     background-color: rgba(255, 255, 255, 0.5);
     width: 800px;
+    height: 350px;
     background-image:url();
     text-align: center;
     font-family:rockwell extra bold;
@@ -104,7 +105,9 @@ table{
 }
 td{
     
-    font-family: arial;
+    font-family: helvetica;
+    
+    
 }
 
 p{
@@ -120,10 +123,39 @@ h1{
     font-size: 40px;
 }
 
+#boton{
+    
+    width: 125px; 
+    height: 40px;
+    text-align: center;
+    background-color: #4cc8de;
+    color: whitesmoke;
+    font-family: helvetica;
+    font-size: 15px;
+    border-color: #4cc8de;  
+}
 
+input{
+    
+    border-radius: 5px;
+    height: 20px;
+}
+#estado{
+    width: 171px;
+    border-radius: 5px;
+    height: 20px;
+}
 
-body{  
-  background-image: url(../Imagenes/eclipse.jpg); 
+#perfil{
+    width: 171px;
+    border-radius: 5px;
+    height: 20px;
+    
+}
+
+body{ 
+  background-color: #09091a;
+   
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed; 

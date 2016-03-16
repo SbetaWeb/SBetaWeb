@@ -17,7 +17,6 @@
         <link rel="stylesheet" href="Estilos/fonts.css" type="text/css">
         <link rel="stylesheet" href="Estilos/demo.css"  type="text/css" />
         <link rel="stylesheet" href="Estilos/slide.css"  type="text/css" />
-        <link rel="stylesheet" href="Estilos/jsp.css"  type="text/css" />
         <link rel="stylesheet" href="Estilos/estiloListar.css"  type="text/css" />
         <script src="JavaScript/nobackbutton.js"></script> 
     </head>

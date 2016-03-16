@@ -81,7 +81,7 @@
 
         </header> -->
 
-
+            
             <form name="validarUsuario" id ="validarUsuario" action="validarUsuario" method="post"> 
 
                 <table id="tabla" >
@@ -91,9 +91,12 @@
                     
                     <br>
                     
+                    <br>
+                    <hr width="2%" > 
                     <tr>
-                        <td id="titulo">...SbetaWeb...</td>
+                        <td id="titulo">SbetaWeb</td>
                     </tr>
+                    
                     
                     <tr>
                         <td><input title="Usuario,almenos 8 caracteres, minúsculas y mayúsculas " type="text" name="usuario"  id="usuario"  pattern="(?=.*[a-z])(?=.*[A-Z]).{8,}" maxlength="20"  placeholder="Usuario" size="50" required>
@@ -116,9 +119,12 @@
 
 
                 </table>
-
+                <br>
+                <hr width="2%" >
             </form>
-
+            <br>
+            
+            
         </div>
         <div id="mensaje-ingreso"> </div>
     </body>
