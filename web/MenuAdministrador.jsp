@@ -37,7 +37,7 @@
 
                         <li><a href='#'><span class="primero"><center><img id="icono" src="Imagenes/0032-book.png"/></center></span>Productos</a>
                             <ul>
-                                <li><a href='#'>Películas</a></li>
+                                <li><a href='peliculas.jsp'>Películas</a></li>
                                 <li><a href='#'>Videojuegos</a></li>
                             </ul>
                         </li>

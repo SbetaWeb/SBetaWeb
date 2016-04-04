@@ -1,3 +1,4 @@
+
 <%@page import="Clases.Datos"%>
 <%@page import="Clases.Usuario"%>
 <!DOCTYPE html>
@@ -185,8 +186,8 @@
         }
         
         if (eliminar){
-            if(usuario == null){
-                mensaje = "Debes Digitar un Usuario para la Consulta";
+            if(usuario == ""){
+                mensaje = "Debes Digitar un Usuario para Eliminar";
             }
         Datos misDatos = new Datos();
         Usuario miUsuario = misDatos.getUsuario(usuario);
@@ -194,6 +195,7 @@
         if(miUsuario == null){
            mensaje = "Usuario no existe";
         }else {
+            
             misDatos.deleteUsuario(usuario);
             usuario = "";
             cedula = "";
@@ -303,7 +305,7 @@
 
                         <li><a href='#'><span class="primero"><center><img id="icono" src="Imagenes/0032-book.png"/></center></span>Productos</a>
                             <ul>
-                                <li><a href='#'>Películas</a></li>
+                                <li><a href='peliculas.jsp'>Películas</a></li>
                                 <li><a href='#'>Videojuegos</a></li>
                             </ul>
                         </li>
@@ -420,7 +422,7 @@
                             <input id="boton" type="submit" name="insertar" value="Insertar">
                             <input id="boton" type="submit" name="consultar" value="Consultar">
                             <input id="boton" type="submit" name="modificar" value="Modificar">
-                            <input id="boton" type="submit" name="eliminar" value="Eliminar">
+                            <input id="eliminar" type="submit" name="eliminar" value="Eliminar">
                             <input id="boton" type="submit" name="limpiar" value="Limpiar">
                             <input id="boton" type="submit" name="listar" value="Listar">
                         </center>

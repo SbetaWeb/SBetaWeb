@@ -29,6 +29,12 @@ table {
         
 }
 
+#mensaje-error{
+    
+   
+    color:red;
+}
+
 #tdusuario{
     
     float: left;
@@ -70,11 +76,13 @@ border: 1px solid green;
 tr{
     
     text-align: center;
+    margin: 0;
 }
 
 td{
     
     font-family: Helvetica;  
+    margin: 0;
 }
 
 @font-face {
