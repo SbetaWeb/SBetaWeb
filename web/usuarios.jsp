@@ -1,6 +1,6 @@
-
 <%@page import="Clases.Datos"%>
 <%@page import="Clases.Usuario"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,6 +16,12 @@
         <link rel="stylesheet" href="Estilos/estilos_2.css"  type="text/css" />
         <script src="JavaScript/nobackbutton.js"></script> 
         <script src="JavaScript/soloNumeros.js"></script> 
+        
+        <script language="JavaScript"> 
+function confirmar ( mensaje ) { 
+return confirm( mensaje ); 
+} 
+</script>
 
     </head>
 
@@ -186,7 +192,8 @@
         }
         
         if (eliminar){
-            if(usuario == ""){
+            
+            if(usuario == " "){
                 mensaje = "Debes Digitar un Usuario para Eliminar";
             }
         Datos misDatos = new Datos();
@@ -338,7 +345,6 @@
                         <li ><a href='#'><span class="quinto"><center><img id="icono" src="Imagenes/ayuda.png"/></center></i></span>Ayuda</a>
                             <ul> 
                                 <li><a href='#'><span>Manual de usuario</span></a></li>
-                                <li><a href='#'><span>Ayuda acerca de...</span></a></li>
                                 <li><a href='MenuAdministrador.jsp'>Menú Principal</a></li>
                             </ul> 
                         </li>
@@ -409,8 +415,8 @@
                         <tr>
                             <td>Seguridad Contraseña:</td> 
                             <td><input type="text"  name="seguridad" style="border: 0px;  background-color:transparent; "onfocus="blur()"></td>
-                            <td></td>
-                            <td></td>
+                            <td id="rojo">(*) Campos Obligatorios</td>
+                            <td id="rojo"></td>
                             
                         </tr>
                         
@@ -422,7 +428,7 @@
                             <input id="boton" type="submit" name="insertar" value="Insertar">
                             <input id="boton" type="submit" name="consultar" value="Consultar">
                             <input id="boton" type="submit" name="modificar" value="Modificar">
-                            <input id="eliminar" type="submit" name="eliminar" value="Eliminar">
+                            <input id="boton" type="submit" name="eliminar" value="Eliminar" onclick="return confirmar('¿Está seguro que desea eliminar el usuario?')">
                             <input id="boton" type="submit" name="limpiar" value="Limpiar">
                             <input id="boton" type="submit" name="listar" value="Listar">
                         </center>

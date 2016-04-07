@@ -1,4 +1,4 @@
-<%@page import="Clases.Datos"%>
+<%@page import="Clases.DatosPelicula"%>
 <%@page import="Clases.Pelicula"%>
 <!DOCTYPE html>
 <html>
@@ -15,27 +15,26 @@
         <link rel="stylesheet" href="Estilos/estilos_2.css"  type="text/css" />
         <script src="JavaScript/nobackbutton.js"></script> 
 
-    </head>
-
-    <body onload="nobackbutton()">
         
-        <% 
+        
+    </head>
+ <% 
             
         String mensaje = "";
             
-        boolean insertar = false;
-        boolean consultar = false;
-        boolean modificar = false;
-        boolean eliminar = false;
-        boolean limpiar = false;
-        boolean listar = false;
+        boolean insertarPelicula = false;
+        boolean consultarPelicula = false;
+        boolean modificarPelicula = false;
+        boolean eliminarPelicula = false;
+        boolean limpiarPelicula = false;
+        boolean listarPelicula = false;
         
-        if(request.getParameter("insertar") != null) insertar = true;
-        if(request.getParameter("consultar") != null) consultar = true;
-        if(request.getParameter("modificar") != null) modificar = true;
-        if(request.getParameter("eliminar") != null) eliminar = true;
-        if(request.getParameter("limpiar") != null) limpiar = true;
-        if(request.getParameter("listar") != null) listar = true;
+        if(request.getParameter("insertarPelicula") != null) insertarPelicula = true;
+        if(request.getParameter("consultarPelicula") != null) consultarPelicula = true;
+        if(request.getParameter("modificarPelicula") != null) modificarPelicula = true;
+        if(request.getParameter("eliminarPelicula") != null) eliminarPelicula = true;
+        if(request.getParameter("limpiarPelicula") != null) limpiarPelicula = true;
+        if(request.getParameter("listarPelicula") != null) listarPelicula = true;
         
         String nombrePelicula = "";
         String calidad = "";
@@ -59,14 +58,14 @@
         if(request.getParameter("cantidad") != null) cantidad = request.getParameter("cantidad");
         if(request.getParameter("estado") != null) estado = request.getParameter("estado");
         
-        if (consultar){
+        if (consultarPelicula){
             if(nombrePelicula == null){
                 mensaje = "Debes Digitar una Película para la Consulta";
             }
-        Datos misDatos = new Datos();
-        Pelicula miPelicula = misDatos.getPelicula(nombrePelicula);
+        DatosPelicula misDatosPelicula = new DatosPelicula();
+        Pelicula miPelicula = misDatosPelicula.getPelicula(nombrePelicula);
         
-        if(miPelicula == null){
+        if(miPelicula != null){
            mensaje = "Película no existe";
         }else {
             nombrePelicula = miPelicula.getNombrePelicula();
@@ -81,11 +80,11 @@
             estado = miPelicula.getEstado();
             mensaje = "Película Consultada";
         }
-        misDatos.cerrarConexion();
+        misDatosPelicula.cerrarConexion();
        
         }
         
-        if (limpiar){
+        if (limpiarPelicula){
             nombrePelicula = "";
             calidad = "";
             genero = "";
@@ -99,7 +98,7 @@
             mensaje = "";
         }
         
-        if(insertar){
+        if(insertarPelicula){
             if(nombrePelicula == ""){
                 mensaje = "Debes Ingresar el Nombre de la Película";
             }else if (calidad == "") {
@@ -121,23 +120,23 @@
             }else if (estado == "") {
                 mensaje = "Debes Seleccionar un Estado";
             }else {
-                Datos misDatos = new Datos();
-                Pelicula miPelicula = misDatos.getPelicula(nombrePelicula);
+                DatosPelicula misDatosPelicula = new DatosPelicula();
+                Pelicula miPelicula = misDatosPelicula.getPelicula(nombrePelicula);
                 
                 if (miPelicula != null) {
                     mensaje = "La Película ya existe";
                 }else {
                     miPelicula = new Pelicula(nombrePelicula, calidad, genero, director, anio, subtitulos, audio, pais, cantidad, estado);
-                    misDatos.newPelicula(miPelicula);
+                    misDatosPelicula.newPelicula(miPelicula);
                     mensaje = "Película Creada Exitosamente";
                 }
                 
-                misDatos.cerrarConexion();
+                misDatosPelicula.cerrarConexion();
             }
         }
         
         
-        if(modificar){
+        if(modificarPelicula){
             if(nombrePelicula == ""){
                 mensaje = "Debes Ingresar el Nombre de la Película";
             }else if (calidad == "") {
@@ -160,32 +159,32 @@
                 mensaje = "Debes Seleccionar un Estado";
             
             }else {
-                Datos misDatos = new Datos();
-                Pelicula miPelicula = misDatos.getPelicula(nombrePelicula);
+                DatosPelicula misDatosPelicula = new DatosPelicula();
+                Pelicula miPelicula = misDatosPelicula.getPelicula(nombrePelicula);
                 
                 if (miPelicula == null) {
                     mensaje = "La Película no Existe";
                 }else {
                     miPelicula = new Pelicula(nombrePelicula, calidad, genero, director, anio, subtitulos, audio, pais, cantidad, estado) ;
-                    misDatos.updatePelicula(miPelicula);
+                    misDatosPelicula.updatePelicula(miPelicula);
                     mensaje = "Película Modificada Exitosamente";
                 }
                 
-                misDatos.cerrarConexion();
+                misDatosPelicula.cerrarConexion();
             }
         }
         
-        if (eliminar){
+        if (eliminarPelicula){
             if(nombrePelicula == null){
                 mensaje = "Debes Digitar una Pelicula para la Consulta";
             }
-        Datos misDatos = new Datos();
-        Pelicula miPelicula = misDatos.getPelicula(nombrePelicula);
+        DatosPelicula misDatosPelicula = new DatosPelicula();
+        Pelicula miPelicula = misDatosPelicula.getPelicula(nombrePelicula);
         
         if(miPelicula == null){
            mensaje = "Pelicula no Existe";
         }else {
-            misDatos.deletePelicula(nombrePelicula);
+            misDatosPelicula.deletePelicula(nombrePelicula);
             nombrePelicula = "";
             calidad = "";
             genero = "";
@@ -198,17 +197,17 @@
             estado = "";
             mensaje = "Pelicula Eliminada";
         }
-        misDatos.cerrarConexion();
+        misDatosPelicula.cerrarConexion();
        
         }
         
-        if(listar){
+        if(listarPelicula){
             %>
             <jsp:forward page="ListarPeliculas.jsp"></jsp:forward>
         <%
             }
         %>  
-        
+    <body onload="nobackbutton()">
         
         <div id="vacio">
             <header>
@@ -254,7 +253,6 @@
                         <li ><a href='#'><span class="quinto"><center><img id="icono" src="Imagenes/ayuda.png"/></center></i></span>Ayuda</a>
                             <ul> 
                                 <li><a href='#'><span>Manual de usuario</span></a></li>
-                                <li><a href='#'><span>Ayuda acerca de...</span></a></li>
                                 <li><a href='MenuAdministrador.jsp'>Menú Principal</a></li>
                             </ul> 
                         </li>
@@ -342,12 +340,12 @@
 
                     <td colspan="4">
                         <center>
-                            <input id="boton" type="submit" name="insertar" value="Insertar">
-                            <input id="boton" type="submit" name="consultar" value="Consultar">
-                            <input id="boton" type="submit" name="modificar" value="Modificar">
-                            <input id="boton" type="submit" name="eliminar" value="Eliminar">
-                            <input id="boton" type="submit" name="limpiar" value="Limpiar">
-                            <input id="boton" type="submit" name="listar" value="Listar">
+                            <input id="boton" type="submit" name="insertarPelicula" value="Insertar">
+                            <input id="boton" type="submit" name="consultarPelicula" value="Consultar">
+                            <input id="boton" type="submit" name="modificarPelicula" value="Modificar">
+                            <input id="boton" type="submit" name="eliminarPelicula" value="Eliminar">
+                            <input id="boton" type="submit" name="limpiarPelicula" value="Limpiar">
+                            <input id="boton" type="submit" name="listarPelicula" value="Listar">
                         </center>
                     </td>   
 

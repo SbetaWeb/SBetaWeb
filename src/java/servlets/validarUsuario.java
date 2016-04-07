@@ -5,6 +5,7 @@
  */
 package servlets;
 
+
 import Clases.Datos;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -48,7 +49,7 @@ public class validarUsuario extends HttpServlet {
             } else if ("cliente".equals(x)) {
                 response.sendRedirect("MenuCliente.jsp");
             } else {
-                out.print("¡Usuario o Contraseña incorrectos!");
+                response.sendRedirect("index_error.jsp");
             }
 
             

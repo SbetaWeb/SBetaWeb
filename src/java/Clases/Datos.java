@@ -88,36 +88,7 @@ public class Datos {
         }
     }
     
-    public Pelicula getPelicula (String nombrePelicula){
-        try {
-            Pelicula miPelicula = null;
-            String sql = "select * from tblpelicula where nombrePelicula='" +nombrePelicula+ "'";
-            
-            Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery(sql);
-            
-            if(rs.next()){
-                miPelicula = new Pelicula(
-                        rs.getString("nombrePelicula"),
-                        rs.getString("calidad"), 
-                        rs.getString("genero"), 
-                        rs.getString("director"), 
-                        rs.getString("anio"), 
-                        rs.getString("idioma"), 
-                        rs.getString("audio"), 
-                        rs.getString("pais"), 
-                        rs.getString("cantidad"), 
-                        rs.getString("estado"));
-            
-            }
-            
-            return miPelicula;
-        } catch (SQLException ex) {
-            Logger.getLogger(Datos.class.getName()).log(Level.SEVERE, null, ex);
-            return null;
-        }
-    }
-    
+       
     public void newUsuario (Usuario miUsuario) {
         try {
             String sql = "insert into tblusuario values ('"+miUsuario.getUsuario()+"', '"+miUsuario.getCedula()+"', '"+miUsuario.getNombre()+"', '"+miUsuario.getApellido()+"', '"+miUsuario.getCelular()+"', '"+miUsuario.getEmail()+"', '"+miUsuario.getEstado()+"', '"+miUsuario.getPerfil()+"', '"+miUsuario.getClave()+"', '"+miUsuario.getRepetirclave()+"') ";
@@ -129,17 +100,7 @@ public class Datos {
         }
     }
     
-    public void newPelicula (Pelicula miPelicula) {
-        try {
-            String sql = "insert into tblpelicula values ('"+miPelicula.getNombrePelicula()+"', '"+miPelicula.getCalidad()+"', '"+miPelicula.getGenero()+"', '"+miPelicula.getDirector()+"', '"+miPelicula.getAnio()+"', '"+miPelicula.getSubtitulos()+"', '"+miPelicula.getAudio()+"', '"+miPelicula.getPais()+"', '"+miPelicula.getCantidad()+"', '"+miPelicula.getEstado()+"') ";
-            
-            Statement st = con.createStatement();
-            st.executeUpdate(sql);
-        } catch (SQLException ex) {
-            Logger.getLogger(Datos.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-    
+       
     public void updateUsuario (Usuario miUsuario) {
         try {
             String sql = "update tblusuario set cedula = '"+miUsuario.getCedula()+"', nombre = '"+miUsuario.getNombre()+"', apellido = '"+miUsuario.getApellido()+"', celular = '"+miUsuario.getCelular()+"', email = '"+miUsuario.getEmail()+"', estado = '"+miUsuario.getEstado()+"', perfil = '"+miUsuario.getPerfil()+"', clave = '"+miUsuario.getClave()+"', repetirclave = '"+miUsuario.getRepetirclave()+"' where usuario = '"+miUsuario.getUsuario()+"'";
@@ -151,17 +112,7 @@ public class Datos {
         }
     }
     
-    public void updatePelicula (Pelicula miPelicula) {
-        try {
-            String sql = "update tblpelicula set calidad = '"+miPelicula.getCalidad()+"', genero = '"+miPelicula.getGenero()+"', director = '"+miPelicula.getDirector()+"', anio = '"+miPelicula.getAnio()+"', subtitulos = '"+miPelicula.getSubtitulos()+"', audio = '"+miPelicula.getAudio()+"', pais = '"+miPelicula.getPais()+"', cantidad = '"+miPelicula.getCantidad()+"', estado = '"+miPelicula.getEstado()+"' where nombrePelicula = '"+miPelicula.getNombrePelicula()+"'";
-            
-            Statement st = con.createStatement();
-            st.executeUpdate(sql);
-        } catch (SQLException ex) {
-            Logger.getLogger(Datos.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-    
+        
     public void deleteUsuario(String usuario){
         try {
             
@@ -176,20 +127,7 @@ public class Datos {
         }
     }
     
-    public void deletePelicula(String nombrePelicula){
-        try {
-            
-            String sql = "delete from tblpelicula where nombrePelicula='" +nombrePelicula+ "'";
-            
-            Statement st = con.createStatement();
-            st.executeUpdate(sql);
-           
-        } catch (SQLException ex) {
-            Logger.getLogger(Datos.class.getName()).log(Level.SEVERE, null, ex);
-          
-        }
-    }
-    
+        
     public ResultSet getUsuarios(){
         try {
             Usuario miUsuario = null;
@@ -204,17 +142,4 @@ public class Datos {
         }
     }
     
-    public ResultSet getPeliculas(){
-        try {
-            Pelicula miPelicula = null;
-            String sql = "select * from tblpelicula";
-            
-            Statement st = con.createStatement();
-            return st.executeQuery(sql);
-           
-        } catch (SQLException ex) {
-            Logger.getLogger(Datos.class.getName()).log(Level.SEVERE, null, ex);
-            return null;
-        }
     }
-}

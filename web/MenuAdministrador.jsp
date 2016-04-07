@@ -17,13 +17,13 @@
         <link rel="stylesheet" href="Estilos/fonts.css" type="text/css">
         <link rel="stylesheet" href="Estilos/demo.css"  type="text/css" /> 
         <script src="JavaScript/nobackbutton.js"></script>
-        
+
 
     </head>
-    
+
     <body onload="nobackbutton();"> 
-        
-        
+
+
         <br>
 
         <div id="vacio">
@@ -53,7 +53,7 @@
                             </ul>
                         </li>
                         <li ><a href='usuarios.jsp'><span class="tercero"><center><img id="icono" src="Imagenes/0146-wrench.png"/></center></span>Usuarios</a>
-                           
+
                         </li>
 
 
@@ -70,7 +70,6 @@
                         <li ><a href='#'><span class="quinto"><center><img id="icono" src="Imagenes/ayuda.png"/></center></i></span>Ayuda</a>
                             <ul> 
                                 <li><a href='#'><span>Manual de usuario</span></a></li>
-                                <li><a href='#'><span>Ayuda acerca de...</span></a></li>
                                 <li><a href='MenuAdministrador.jsp'>Menú Principal</a></li>
                             </ul> 
                         </li>
@@ -167,10 +166,5 @@
         <script src="particles.js"></script>
         <script src="particulas.js"></script>
 
-
-
-    </div>
-</div> 
-
-</body>
+    </body>
 </html>

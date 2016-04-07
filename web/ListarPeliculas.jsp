@@ -5,13 +5,13 @@
 --%>
 
 <%@page import="java.sql.ResultSet"%>
-<%@page import="Clases.Datos"%>
+<%@page import="Clases.DatosPelicula"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>Listado de Usuarios</title>
+        <title>Listado de Peliculas</title>
         <link rel="icon" type="image/png" href="Imagenes/favicon.png" />
         <link rel="stylesheet" href="Estilos/estilo1.css" >
         <link rel="stylesheet" href="Estilos/fonts.css" type="text/css">
@@ -78,41 +78,45 @@
             <%--  <div id="particles-js">  --%>
         </div>
         
-        <center><h1>Listado de Usuarios</h1></center>
+        <center><h1>Listado de Peliculas</h1></center>
         <br>
         <br>
         <center><table border="2">
             <thead>
                 <tr>
-                    <th>Usuario</th>
-                    <th>Cédula</th>
-                    <th>Nombres</th>
-                    <th>Apellidos</th>
-                    <th>Celular</th>
-                    <th>Correo Electrónico</th>
+                    <th>Nombre Pelicula</th>
+                    <th>Calidad</th>
+                    <th>Género</th>
+                    <th>Director</th>
+                    <th>Año</th>
+                    <th>Subtitulos</th>
+                    <th>Audio</th>
+                    <th>País</th>
+                    <th>Cantidad</th>
                     <th>Estado</th>
-                    <th>Perfil</th>
                 </tr>
             </thead>
             <tbody>
                 <%
-                Datos misDatos = new Datos();
-                ResultSet rs = misDatos.getUsuarios();
+                DatosPelicula misDatosPelicula = new DatosPelicula();
+                ResultSet rs = misDatosPelicula.getPeliculas();
                 while (rs.next()){       
                 %>
                 <tr>
-                    <td><%= rs.getString("usuario") %> </td>
-                    <td><%= rs.getString("cedula") %></td>
-                    <td><%= rs.getString("nombre") %></td>
-                    <td><%= rs.getString("apellido") %></td>
-                    <td><%= rs.getString("celular") %></td>
-                    <td><%= rs.getString("email") %></td>
+                    <td><%= rs.getString("nombrePelicula") %> </td>
+                    <td><%= rs.getString("calidad") %></td>
+                    <td><%= rs.getString("genero") %></td>
+                    <td><%= rs.getString("director") %></td>
+                    <td><%= rs.getString("anio") %></td>
+                    <td><%= rs.getString("subtitulos") %></td>
+                    <td><%= rs.getString("audio") %></td>
+                    <td><%= rs.getString("pais") %></td>
+                    <td><%= rs.getString("cantidad") %></td>
                     <td><%= rs.getString("estado") %></td>
-                    <td><%= rs.getString("perfil") %></td>
                 </tr>
                 <% 
                 }
-                misDatos.cerrarConexion();
+                misDatosPelicula.cerrarConexion();
                 %>
             </tbody>
         </table>
